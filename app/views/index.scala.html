@@ -1,0 +1,12 @@
+@(content: scala.collection.mutable.HashMap[String, String])
+
+@main("Welcome to Play") {
+<h1>Welcome to Play!</h1>
+<h2>
+@for(c <- content.keySet) {
+<a href=@content.get(c)
+>@c
+</a>
+</h2>
+}
+}

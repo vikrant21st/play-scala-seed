@@ -1,0 +1,29 @@
+@(question: QuestionUser, control: ExamController)(implicit request: MessagesRequestHeader)
+@import helper._
+
+@main("Examination is On its way") {
+<div>
+    <h4>Question</h4>
+    @question.question
+</div>
+
+<hr/>
+<form name="QuestionForm" method="post">
+<div>
+    <h4>Options</h4>
+    <input name="id" value=@question.id
+    hidden>
+    <input type="radio" name="option" value=1 checked>@question.opt1
+    <br/><input type="radio" name="option" value=1>@question.opt2
+    <br/><input type="radio" name="option" value=1>@question.opt3
+    <br/><input type="radio" name="option" value=1>@question.opt4
+</div>
+<hr/>
+<div>
+    <input type="submit" name="next" value="next" onclick=document.getElementById("QuestionForm")>
+    <input type="submit" name="previous" value="previous" >
+    <!--a href=control.nextQuestion()>Next</a-->
+</div>
+</form>
+<hr/>
+}
